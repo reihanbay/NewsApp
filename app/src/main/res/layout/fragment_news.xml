@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:backgroundTint="@color/bg_color"
+        tools:context=".fragment.listnews.NewsFragment">
+<!--        <ProgressBar-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:id="@+id/progress_bar"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:indeterminate="true"-->
+<!--            android:progressBackgroundTint="@color/purple_500"-->
+<!--            android:progressTint="@color/purple_500"-->
+<!--            android:max="100" />-->
+
+        <androidx.appcompat.widget.SearchView
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/sv_news"
+            android:padding="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            android:background="@drawable/container_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv_empty"
+            android:visibility="gone"
+            android:src="@drawable/ic_emptydata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/frame_shimmer"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/sv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_parent_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include layout="@layout/shimmer_rv_layout"/>
+                <include layout="@layout/shimmer_rv_layout"/>
+                <include layout="@layout/shimmer_rv_layout"/>
+                <include layout="@layout/shimmer_rv_layout"/>
+                <include layout="@layout/shimmer_rv_layout"/>
+                <include layout="@layout/shimmer_rv_layout"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            app:layout_constraintTop_toBottomOf="@id/sv_news"
+            android:layout_marginTop="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        tools:context=".detailnews.DetailActivity">
+        <FrameLayout
+            android:id="@+id/fl_img_news"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_news"
+                android:layout_gravity="top"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="30dp"
+                android:background="@color/black_gray"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"/>
+            <ImageView
+                android:id="@+id/iv_shadow"
+                android:background="@drawable/layer_image"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"/>
+            <ImageView
+                android:id="@+id/btn_back"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:tint="@color/white" />
+            <RelativeLayout
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/btn_url"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:elevation="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="15dp"
+                    android:background="@drawable/container_bottom_nav"
+                    android:src="@drawable/ic_inactiveshare"
+                    app:tint="@color/purple_500"
+                    />
+                <ImageView
+                    android:id="@+id/btn_save"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:elevation="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_toStartOf="@id/btn_url"
+                    android:padding="15dp"
+                    android:background="@drawable/container_bottom_nav"
+                    android:src="@drawable/ic_bookmark"
+                    app:tint="@color/purple_500"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_margin="16dp"
+            android:textColor="@color/black_gray"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="18sp"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            app:layout_constraintTop_toBottomOf="@id/fl_img_news"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_margin="16dp"
+            android:textColor="@color/gray_1"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="14sp"
+            android:text="25 Januari 2020"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/black_gray"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="14sp"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_margin="20dp"
+            android:textColor="@color/purple_500"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="14sp"
+            android:text="Author - Reihan Bayzaky"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
